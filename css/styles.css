@@ -1,0 +1,89 @@
+body {
+  background-color: #121212;
+  color: #aaaaaa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+h1 {
+  font-size: 22px;
+  color: #ffffff;
+}
+.header {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 1rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 1rem;
+  border: 1px solid #ffffff;
+  border-radius: 1rem;
+  box-sizing: border-box;
+}
+.summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  width: 100%;
+  border-bottom: 1px solid #ffffff;
+}
+.primaryDetailsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+.primaryDetailsGrid .detailGridItem {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.selectWrapper {
+  position: relative;
+  width: 250px;
+}
+.selectWrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 10px 40px 10px 15px;
+  /* Add right padding for the arrow */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color: #333;
+  cursor: pointer;
+}
+.selectWrapper select:focus {
+  outline: none;
+  border-color: #007aff;
+  /* A common macOS highlight color */
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.25);
+}
+.selectWrapper::after {
+  content: '▼';
+  /* You can use a character or a background image */
+  font-size: 14px;
+  color: #555;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* IMPORTANT: This lets clicks pass through to the select element */
+}
+@media (min-width: 768px) {
+  .primaryDetailsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
