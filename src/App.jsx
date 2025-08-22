@@ -3,7 +3,7 @@ const App = () => {
         <>
             <header className="header">
                 <h1>Weather App</h1>
-                <div className="selectWrapper">
+                <div className="select-wrapper">
                     <select className="citySelect">
                         <option value="Tallinn">Tallinn</option>
                         <option value="Lviv">Lviv</option>
@@ -14,21 +14,21 @@ const App = () => {
             <main className="main">
                 <div className="container">
                     <div className="summary">
-                        <p>Tallinn</p>
-                        <p>current weather</p>
+                        <h2>Tallinn, Harjumaa</h2>
+                        <p className="text-secondary text-l label">current weather</p>
                         <p>weather icon</p>
                         <p>temperature</p>
                         <p>conditions</p>
                     </div>
-                    <div className="primaryDetailsGrid">
-                        <div className="detailGridItem">Humidity</div>
-                        <div className="detailGridItem">Wind speed</div>
-                        <div className="detailGridItem">Pressure</div>
-                        <div className="detailGridItem">UV Index</div>
+                    <div className="primary-details-grid">
+                        <div className="detail-grid-item">Humidity</div>
+                        <div className="detail-grid-item">Wind speed</div>
+                        <div className="detail-grid-item">Pressure</div>
+                        <div className="detail-grid-item">UV Index</div>
                     </div>
                 </div>
                 <div className="container">
-                    <div className="cardHeader">
+                    <div className="card-header">
                         <h3>5 day forecast</h3>
                     </div>
                     <div className="card">today</div>

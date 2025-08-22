@@ -1,7 +1,13 @@
-body {
+* {
   background-color: #121212;
-  color: #aaaaaa;
+  color: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.text-secondary {
+  font-weight: 200;
+  color: #aaaaaa;
+}
+.text-l {
   font-size: 16px;
 }
 h1 {
@@ -34,22 +40,29 @@ h1 {
   width: 100%;
   border-bottom: 1px solid #ffffff;
 }
-.primaryDetailsGrid {
+.summary h2 {
+  margin-bottom: 0.5rem;
+}
+.summary .label {
+  margin-top: 0;
+  padding-top: 0;
+}
+.primary-details-grid {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
   gap: 1rem;
 }
-.primaryDetailsGrid .detailGridItem {
+.primary-details-grid .detail-grid-item {
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
 }
-.selectWrapper {
+.select-wrapper {
   position: relative;
   width: 250px;
 }
-.selectWrapper select {
+.select-wrapper select {
   appearance: none;
   -webkit-appearance: none;
   width: 100%;
@@ -57,19 +70,19 @@ h1 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   padding: 10px 40px 10px 15px;
   /* Add right padding for the arrow */
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  background-color: #1e1e1e;
+  border: 1px solid #1e1e1e;
   border-radius: 8px;
-  color: #333;
+  color: #ffffff;
   cursor: pointer;
 }
-.selectWrapper select:focus {
+.select-wrapper select:focus {
   outline: none;
   border-color: #007aff;
   /* A common macOS highlight color */
   box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.25);
 }
-.selectWrapper::after {
+.select-wrapper::after {
   content: '▼';
   /* You can use a character or a background image */
   font-size: 14px;
@@ -82,7 +95,7 @@ h1 {
   /* IMPORTANT: This lets clicks pass through to the select element */
 }
 @media (min-width: 768px) {
-  .primaryDetailsGrid {
+  .primary-details-grid {
     grid-template-columns: 1fr 1fr;
   }
 }

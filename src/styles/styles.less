@@ -3,6 +3,8 @@
 //Primary Colors
 @primary-bg-color-dark: #121212; //charcoal black
 @secondary-bg-color-dark: #1e1e1e; //dark gray
+@tertiary-bg-color-dark: #1e1e1e;
+
 //Text and accent colors
 @primary-text-color-dark: #ffffff; //pure white
 @secondary-text-color-dark: #aaaaaa; //medium-gray
@@ -12,6 +14,7 @@
 //primary colors:
 @primary-bg-color-light: #ffffff;
 @secondary-bg-color-light: #f0f0f0;
+@tertiary-bg-color-light: #c0c0c0;
 //text and accent colors
 @primary-text-color-light: #1e1e1e;
 @secondary-text-color-light: #6d6d6d;
@@ -19,20 +22,22 @@
 
 //universal colors
 @accent-text-color: #ffca28; //sunshine yellow
+@focus-border-color: #007aff;
+@box-shadow-color: rgba(0, 122, 255, 0.25);
 
 //Fonts
 @font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 @font-size-large: 80px;
-@font-weight-large: light;
+@font-weight-light: 200;
 @font-size-title: 22px;
-@font-weight-title: semibold;
+@font-weight-title: 300;
 @font-size-primary: 18px;
-@font-weight-primary: medium;
+@font-weight-primary: 500;
 @font-size-secondary: 16px;
 @font-weight-secondary: bold;
 @font-size-small: 14px;
 @font-size-list-item: 17px;
-@font-weight-regular: regular;
+@font-weight-regular: 400;
 
 //breakpoints
 @screen-m-min:768px; //medium
@@ -40,10 +45,20 @@
 
 
 
-body{
+//general style
+*{
   background-color: @primary-bg-color-dark;
-  color: @secondary-text-color-dark;
+  color: @primary-text-color-dark;
   font-family: @font-family;
+}
+
+
+//everything text related
+.text-secondary{
+  font-weight: @font-weight-light;
+  color: @secondary-text-color-dark;
+}
+.text-l{
   font-size: @font-size-secondary;
 }
 
@@ -52,6 +67,8 @@ h1{
   color: @primary-text-color-dark;
 }
 
+
+//containers and page elements
 .header{
   position: sticky;
   display: flex;
@@ -78,15 +95,27 @@ h1{
   padding: 0.5rem;
   width: 100%;
   border-bottom: 1px solid @primary-text-color-dark;
+
+  h2{
+    margin-bottom: 0.5rem;
+  }
+
+  .label{
+    margin-top: 0;
+    padding-top: 0;
+  }
+
 }
 
-.primaryDetailsGrid{
+
+
+.primary-details-grid{
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
   gap: 1rem;
 
-  .detailGridItem{
+  .detail-grid-item{
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -95,7 +124,7 @@ h1{
 
 
 //select element
-.selectWrapper{
+.select-wrapper{
   position: relative;
   width: 250px;
 
@@ -108,21 +137,21 @@ h1{
     font-size: 16px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     padding: 10px 40px 10px 15px; /* Add right padding for the arrow */
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    background-color: @tertiary-bg-color-dark;
+    border: 1px solid @secondary-bg-color-dark;
     border-radius: 8px;
-    color: #333;
+    color: @primary-text-color-dark;
     cursor: pointer;
   }
 
   select:focus{
     outline: none;
-    border-color: #007aff; /* A common macOS highlight color */
-    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.25);
+    border-color: @focus-border-color; /* A common macOS highlight color */
+    box-shadow: 0 0 0 3px @box-shadow-color;
   }
 }
 
-.selectWrapper::after{
+.select-wrapper::after{
   content: '▼'; /* You can use a character or a background image */
   font-size: 14px;
   color: #555;
@@ -138,7 +167,7 @@ h1{
 
 //Medium screen styles
 @media (min-width: @screen-m-min) {
-  .primaryDetailsGrid{
+  .primary-details-grid{
     grid-template-columns: 1fr 1fr;
   }
 }
