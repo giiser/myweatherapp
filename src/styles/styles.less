@@ -27,7 +27,8 @@
 
 //Fonts
 @font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-@font-size-large: 80px;
+@font-size-xlarge: 48px;
+@font-size-large: 32px;
 @font-weight-light: 200;
 @font-size-title: 22px;
 @font-weight-title: 300;
@@ -51,15 +52,46 @@
   color: @primary-text-color-dark;
   font-family: @font-family;
 }
+.mb-0{
+  margin-bottom: 0;
+}
+.mt-1, .mb-1{
+  margin-top: 0.5rem;
+}
+.m-0{
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
 
 //everything text related
+.text-bold{
+  font-weight: @font-weight-secondary;
+}
 .text-secondary{
-  font-weight: @font-weight-light;
   color: @secondary-text-color-dark;
 }
-.text-l{
+.text-primary{
+  font-size: @font-size-primary;
+  font-weight: @font-weight-primary;
+}
+.text-title{
+  font-size: @font-size-title;
+  font-weight: @font-weight-title;
+}
+.text-m{
   font-size: @font-size-secondary;
+}
+.text-xl{
+  font-size: @font-size-xlarge;
+}
+.text-l{
+  font-size: @font-size-large;
+  font-weight: @font-weight-primary;
+}
+.text-s{
+  font-size: @font-size-small;
+  font-weight: @font-weight-regular;
 }
 
 h1{
@@ -119,9 +151,54 @@ h1{
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
 }
 
+
+//5-day forecast cards
+.card{
+  display: flex;
+  justify-content: space-between;
+  background-color: @secondary-bg-color-dark;
+  box-sizing: border-box;
+  margin: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 1rem;
+  width: 100%;
+
+  .card-left{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: @secondary-bg-color-dark;
+
+
+    div{
+      margin: 0.5rem;
+      background-color: @secondary-bg-color-dark;
+
+      p{
+        margin: 0.5rem;
+        background-color: @secondary-bg-color-dark;
+
+      }
+    }
+  }
+  .card-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: @secondary-bg-color-dark;
+
+    p{
+      margin: 0.5rem;
+      background-color: @secondary-bg-color-dark;
+    }
+  }
+
+}
 
 //select element
 .select-wrapper{
@@ -169,6 +246,9 @@ h1{
 @media (min-width: @screen-m-min) {
   .primary-details-grid{
     grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    width: 100%;
   }
 }
 
