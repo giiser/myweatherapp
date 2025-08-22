@@ -3,7 +3,7 @@
 //Primary Colors
 @primary-bg-color-dark: #121212; //charcoal black
 @secondary-bg-color-dark: #1e1e1e; //dark gray
-@tertiary-bg-color-dark: #1e1e1e;
+@tertiary-bg-color-dark: #4b4b4b;
 
 //Text and accent colors
 @primary-text-color-dark: #ffffff; //pure white
@@ -172,16 +172,16 @@ h1{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: @secondary-bg-color-dark;
+    background-color: inherit;
 
 
     div{
       margin: 0.5rem;
-      background-color: @secondary-bg-color-dark;
+      background-color: inherit;
 
       p{
         margin: 0.5rem;
-        background-color: @secondary-bg-color-dark;
+        background-color: inherit;
 
       }
     }
@@ -190,14 +190,18 @@ h1{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: @secondary-bg-color-dark;
+    background-color: inherit;
 
     p{
       margin: 0.5rem;
-      background-color: @secondary-bg-color-dark;
+      background-color: inherit;
     }
   }
 
+}
+
+.card:hover{
+  background-color: @tertiary-bg-color-dark;
 }
 
 //select element
