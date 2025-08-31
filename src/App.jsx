@@ -28,6 +28,10 @@ const App = () => {
         fetchForecast();
     }, [query]);
 
+    const changeCity = (e) => {
+        setQuery(e.target.value);
+    }
+
     if (loading) return <p>Loading forecast...</p>;
     if (error) return <p>Error: {error}</p>;
 
@@ -38,7 +42,7 @@ const App = () => {
                     Weather App
                 </h1>
                 <div className="select-wrapper">
-                    <select className="citySelect">
+                    <select className="citySelect" onChange={changeCity}>
                         <option value="Tallinn">Tallinn</option>
                         <option value="Lviv">Lviv</option>
                         <option value="Chernihiv">Chernihiv</option>
@@ -48,7 +52,7 @@ const App = () => {
             <main className="main">
                 <div className="container">
                     <div className="summary">
-                        <h2 className="text-title">{forecast.location?.name?.toLocaleString()}, {forecast.location?.region?.toLocaleString()}</h2>
+                        <h2 className="text-title">{forecast.location?.name?.toLocaleString()}</h2>
                         <p className="text-secondary text-m label">Current weather</p>
                         <p className="text-xl m-0"><img src={`https:${forecast.current?.condition?.icon.toLocaleString()}`} alt="current weather icon"/></p>
                         <p className="text-l mb-0 mt-1">{forecast.current?.temp_c.toLocaleString()} °C</p>
