@@ -3,6 +3,8 @@ import Header from "./components/Header.jsx";
 import SummaryContainer from "./components/SummaryContainer.jsx";
 import LongTermForecast from "./components/LongTermForecast.jsx";
 import {ForecastContext} from "./contexts/ForecastContext.js";
+import './i18n.js';
+import i18n from "i18next";
 
 const API_URL= import.meta.env.VITE_BASE_API_URL;
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -34,6 +36,8 @@ const App = () => {
             }
         }
         fetchForecast();
+        i18n.changeLanguage(language);
+
     }, [query, days, language]);
 
     const changeCity = (e) => {
@@ -42,6 +46,7 @@ const App = () => {
 
     const changeLanguage = (e) => {
         setLanguage(e.target.value);
+        i18n.changeLanguage(e.target.value);
     }
     const changeDays = (e) => {
         setDays(e.target.value);
@@ -55,7 +60,7 @@ const App = () => {
             <Header changeCity={changeCity} changeDays={changeDays} changeLanguage={changeLanguage} />
             <main className="main">
                 <SummaryContainer />
-                <LongTermForecast />
+                <LongTermForecast days={days} />
             </main>
 
         </ForecastContext.Provider>

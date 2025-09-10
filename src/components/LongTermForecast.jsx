@@ -2,14 +2,14 @@ import ForecastCard from "./ForecastCard.jsx";
 import {useContext} from "react";
 import {ForecastContext} from "../contexts/ForecastContext.js";
 
-const LongTermForecast = () => {
+const LongTermForecast = ({days}) => {
 
     const forecast = useContext(ForecastContext);
 
     return (
         <div className="container">
             <div className="card-header">
-                <h3 className="text-title mb-1">5 day forecast</h3>
+                <h3 className="text-title mb-1">{days} day forecast</h3>
             </div>
             <ForecastCard forecast={forecast} day={"0"} />
             <div className="card">

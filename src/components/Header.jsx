@@ -1,25 +1,17 @@
+import Controls from "./Controls.jsx";
+import {useTranslation} from "react-i18next";
+
 const Header = ({changeCity, changeDays, changeLanguage}) => {
+
+    const {t} = useTranslation();
+
+
     return (
         <header className="header">
             <h1>
-                Weather App
+                {t('appTitle')}
             </h1>
-            <div className="select-wrapper">
-                <select className="citySelect" onChange={changeCity}>
-                    <option value="Tallinn">Tallinn</option>
-                    <option value="Lviv">Lviv</option>
-                    <option value="Chernihiv">Chernihiv</option>
-                </select>
-                <select className="citySelect" onChange={changeDays}>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="14">14</option>
-                </select>
-                <select className="citySelect" onChange={changeLanguage}>
-                    <option value="en">English</option>
-                    <option value="uk">Українська</option>
-                </select>
-            </div>
+            <Controls changeCity={changeCity} changeDays={changeDays} changeLanguage={changeLanguage}/>
         </header>
     );
 }
