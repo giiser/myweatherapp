@@ -15,7 +15,7 @@ const Controls = ({changeCity, changeDays, changeLanguage}) => {
                 </select>
             </div>
             <div className="select-wrapper">
-                <label htmlFor="days" className="text-secondary">Forecast days</label>
+                <label htmlFor="days" className="text-secondary">{t('forecastDays')}</label>
                 <select id="days"  onChange={changeDays}>
                     <option value="5">5</option>
                     <option value="10">10</option>
@@ -23,7 +23,7 @@ const Controls = ({changeCity, changeDays, changeLanguage}) => {
                 </select>
             </div>
             <div className="select-wrapper">
-                <label htmlFor="lang" className="text-secondary">Language</label>
+                <label htmlFor="lang" className="text-secondary">{t('language')}</label>
                 <select id="lang" onChange={changeLanguage}>
                     <option value="en">English</option>
                     <option value="uk">Українська</option>
