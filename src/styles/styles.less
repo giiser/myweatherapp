@@ -45,6 +45,9 @@
 @screen-l-min:992px; //large
 
 
+.hidden{
+  display: none;
+}
 
 //general style
 *{
@@ -203,10 +206,26 @@ h1{
   cursor: pointer;
 }
 
+
+//controls
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 1rem;
+}
+
 //select element
 .select-wrapper{
-  position: relative;
-  width: 250px;
+
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: calc(100% - 2rem);
+  box-sizing: border-box;
+
 
   select {
     appearance: none;
@@ -229,20 +248,16 @@ h1{
     border-color: @focus-border-color; /* A common macOS highlight color */
     box-shadow: 0 0 0 3px @box-shadow-color;
   }
+
+  label{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    margin-left: 3px;
+  }
+
 }
 
-.select-wrapper::after{
-  content: '▼'; /* You can use a character or a background image */
-  font-size: 14px;
-  color: #555;
 
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-
-  pointer-events: none; /* IMPORTANT: This lets clicks pass through to the select element */
-}
 
 
 //Medium screen styles
@@ -253,5 +268,55 @@ h1{
     align-content: space-evenly;
     width: 100%;
   }
+
+  .controls{
+    flex-direction: row;
+    gap: 1rem;
+  }
 }
 
+@media (prefers-color-scheme: light) {
+  *{
+    background-color: @primary-bg-color-light;
+    color: @primary-text-color-light;
+  }
+
+  .text-secondary{
+    color: @secondary-text-color-light;
+  }
+
+  h1{
+    color: @primary-text-color-light;
+  }
+
+
+  //containers and page elements
+  .header{
+    border-bottom: 1px solid @primary-text-color-light;
+  }
+
+  .container{
+    border: 1px solid @primary-text-color-light;
+  }
+  .summary{
+    border-bottom: 1px solid @primary-text-color-light;
+  }
+  .card{
+    background-color: @secondary-bg-color-light;
+  }
+
+  .card:hover{
+    background-color: @tertiary-bg-color-light;
+    cursor: pointer;
+  }
+
+  //select element
+  .select-wrapper{
+    select {
+      background-color: @secondary-bg-color-light;
+      border: 1px solid @tertiary-bg-color-light;
+      color: @primary-text-color-light;
+    }
+
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "appTitle": "Weather App",
+  "city": "City",
+  "forecastDays": "Forecast days",
+  "language": "Language",
+  "currentWeather": "Current weather",
+  "humidity": "Humidity",
+  "windSpeed": "Wind speed",
+  "high": "High",
+  "low": "Low",
+  "kmh": "km/h",
+  "today": "Today",
+  "tomorrow": "Tomorrow",
+  "tallinn": "Tallinn",
+  "lviv": "Lviv",
+  "chernihiv": "Chernihiv",
+  "next": "Next",
+  "days": "days"
+}
