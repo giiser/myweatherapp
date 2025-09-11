@@ -1,15 +1,17 @@
 import ForecastCard from "./ForecastCard.jsx";
 import {useContext} from "react";
 import {ForecastContext} from "../contexts/ForecastContext.js";
+import {useTranslation} from "react-i18next";
 
 const LongTermForecast = ({days}) => {
 
     const forecast = useContext(ForecastContext);
+    const {t} = useTranslation();
 
     return (
         <div className="container">
             <div className="card-header">
-                <h3 className="text-title mb-1">{days} day forecast</h3>
+                <h3 className="text-title mb-1">{t('next')} {days} {t('days')}</h3>
             </div>
             <ForecastCard forecast={forecast} day={"0"} />
             <div className="card">
