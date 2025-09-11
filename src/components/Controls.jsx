@@ -1,6 +1,6 @@
 import {useTranslation} from "react-i18next";
 
-const Controls = ({changeCity, changeDays, changeLanguage}) => {
+const Controls = ({changeCity, changeLanguage}) => {
 
     const {t} = useTranslation();
 
@@ -12,14 +12,6 @@ const Controls = ({changeCity, changeDays, changeLanguage}) => {
                     <option value="Tallinn">{t('tallinn')}</option>
                     <option value="Lviv">{t('lviv')}</option>
                     <option value="Chernihiv">{t('chernihiv')}</option>
-                </select>
-            </div>
-            <div className="select-wrapper">
-                <label htmlFor="days" className="text-secondary">{t('forecastDays')}</label>
-                <select id="days"  onChange={changeDays}>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="14">14</option>
                 </select>
             </div>
             <div className="select-wrapper">

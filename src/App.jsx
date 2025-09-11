@@ -10,7 +10,6 @@ const API_URL= import.meta.env.VITE_BASE_API_URL;
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 
-
 const App = () => {
 
     const [forecast, setForecast] = useState([]);
@@ -18,7 +17,8 @@ const App = () => {
     const [error, setError] = useState(null);
     const [query, setQuery] = useState('Tallinn');
     const [language, setLanguage] = useState('en');
-    const [days, setDays] = useState('5');
+
+    const days = '3';
 
     //fetch forecast
     useEffect(() => {
@@ -48,16 +48,14 @@ const App = () => {
         setLanguage(e.target.value);
         i18n.changeLanguage(e.target.value);
     }
-    const changeDays = (e) => {
-        setDays(e.target.value);
-    }
+
 
     if (loading) return <p>Loading forecast...</p>;
     if (error) return <p>Error: {error}</p>;
 
     return (
         <ForecastContext.Provider value={forecast}>
-            <Header changeCity={changeCity} changeDays={changeDays} changeLanguage={changeLanguage} />
+            <Header changeCity={changeCity} changeLanguage={changeLanguage} />
             <main className="main">
                 <SummaryContainer />
                 <LongTermForecast days={days} />

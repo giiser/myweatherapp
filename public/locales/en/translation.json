@@ -1,7 +1,6 @@
 {
   "appTitle": "Weather App",
   "city": "City",
-  "forecastDays": "Forecast days",
   "language": "Language",
   "currentWeather": "Current weather",
   "humidity": "Humidity",
