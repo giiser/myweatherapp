@@ -54,6 +54,14 @@
   background-color: @primary-bg-color-dark;
   color: @primary-text-color-dark;
   font-family: @font-family;
+
+  a{
+    text-decoration: none;
+    width: 100%;
+    //margin: 0.25rem;
+    //padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 }
 .mb-0{
   margin-bottom: 0;
@@ -158,6 +166,24 @@ h1{
   }
 }
 
+.forecast-day-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  box-sizing: border-box;
+
+  .forecast-grid-item{
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid @primary-text-color-dark;
+    border-radius: 1rem;
+  }
+}
 
 //5-day forecast cards
 .card{
@@ -175,7 +201,7 @@ h1{
     display: flex;
     align-items: center;
     background-color: inherit;
-
+    margin: 0.1rem;
 
     div{
       margin: 0.5rem;
@@ -195,6 +221,7 @@ h1{
     display: flex;
     align-items: center;
     background-color: inherit;
+    margin: 0.1rem;
 
     p{
       margin: 0.5rem;
@@ -210,24 +237,16 @@ h1{
 }
 
 
-//controls
-
-.controls {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 1rem;
-}
 
 //select element
 .select-wrapper{
 
   margin-left: 1rem;
   margin-right: 1rem;
-  width: calc(100% - 2rem);
   box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 0.25rem;
+
 
 
   select {
@@ -259,7 +278,9 @@ h1{
   }
 
 }
-
+.select-wrapper:last-child{
+  margin-bottom: 0.5rem;
+}
 
 
 
@@ -272,10 +293,6 @@ h1{
     width: 100%;
   }
 
-  .controls{
-    flex-direction: row;
-    gap: 1rem;
-  }
 }
 
 @media (prefers-color-scheme: light) {

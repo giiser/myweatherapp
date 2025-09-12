@@ -19,7 +19,7 @@ const App = () => {
     const [error, setError] = useState(null);
     const [query, setQuery] = useState('Tallinn');
     const [language, setLanguage] = useState('en');
-
+    const [days, setDays] = useState([]);
 
     //fetch forecast
     useEffect(() => {
@@ -29,6 +29,7 @@ const App = () => {
                 const response = await fetch(`${API_URL}${API_KEY}&q=${query}&days=3&lang=${language}`);
                 const data = await response.json();
                 setForecast(data);
+                setDays(data.forecast.forecastday);
             } catch (err) {
                 console.error(err.message);
                 setError(err.message);
@@ -58,8 +59,8 @@ const App = () => {
         <BrowserRouter>
             <ForecastContext.Provider value={forecast}>
                 <Routes>
-                    <Route path="/" element={<HomePage changeCity={changeCity} changeLanguage={changeLanguage} error={error} loading={loading} />} />
-                    <Route path="/day/:date" element={<DayForecastPage />}/>
+                    <Route path="/" element={<HomePage changeCity={changeCity} changeLanguage={changeLanguage} error={error} loading={loading} days={days}/>} />
+                    <Route path="/details/:date" element={<DayForecastPage city={query} />}/>
                     <Route path="/about" element={<AboutPage />}/>
 
                     {/*this is not found. always the last one*/}

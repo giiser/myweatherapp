@@ -1,14 +1,16 @@
 import SummaryContainer from "../components/SummaryContainer.jsx";
 import LongTermForecast from "../components/LongTermForecast.jsx";
 import Header from "../components/Header.jsx";
+import Controls from "../components/Controls.jsx";
 
-const HomePage = ({changeCity, changeLanguage, error, loading}) => {
+const HomePage = ({changeCity, changeLanguage, error, loading, days}) => {
     return (
         <>
-            <Header changeCity={changeCity} changeLanguage={changeLanguage} />
+            <Header headline={"appTitle"} />
+            <Controls changeCity={changeCity} changeLanguage={changeLanguage} />
             <main className="main">
                 <SummaryContainer />
-                <LongTermForecast error={error} loading={loading} />
+                <LongTermForecast error={error} loading={loading} days={days} />
             </main>
         </>
 

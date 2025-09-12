@@ -6,6 +6,11 @@
   color: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
+* a {
+  text-decoration: none;
+  width: 100%;
+  padding-right: 0.5rem;
+}
 .mb-0 {
   margin-bottom: 0;
 }
@@ -94,6 +99,23 @@ h1 {
   flex-direction: column;
   text-align: center;
 }
+.forecast-day-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  box-sizing: border-box;
+}
+.forecast-day-grid .forecast-grid-item {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid #ffffff;
+  border-radius: 1rem;
+}
 .card {
   display: flex;
   justify-content: space-between;
@@ -109,6 +131,7 @@ h1 {
   display: flex;
   align-items: center;
   background-color: inherit;
+  margin: 0.1rem;
 }
 .card .card-left div {
   margin: 0.5rem;
@@ -125,6 +148,7 @@ h1 {
   display: flex;
   align-items: center;
   background-color: inherit;
+  margin: 0.1rem;
 }
 .card .card-right p {
   margin: 0.5rem;
@@ -134,19 +158,12 @@ h1 {
   background-color: #4b4b4b;
   cursor: pointer;
 }
-.controls {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 1rem;
-}
 .select-wrapper {
   margin-left: 1rem;
   margin-right: 1rem;
-  width: calc(100% - 2rem);
   box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 0.25rem;
 }
 .select-wrapper select {
   appearance: none;
@@ -173,16 +190,15 @@ h1 {
   margin-bottom: 0.5rem;
   margin-left: 3px;
 }
+.select-wrapper:last-child {
+  margin-bottom: 0.5rem;
+}
 @media (min-width: 768px) {
   .primary-details-grid {
     grid-template-columns: 1fr 1fr;
     justify-content: space-evenly;
     align-content: space-evenly;
     width: 100%;
-  }
-  .controls {
-    flex-direction: row;
-    gap: 1rem;
   }
 }
 @media (prefers-color-scheme: light) {

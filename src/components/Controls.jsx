@@ -5,7 +5,7 @@ const Controls = ({changeCity, changeLanguage}) => {
     const {t} = useTranslation();
 
     return (
-        <div className={"controls"}>
+        <div className={"container"}>
             <div className="select-wrapper select-filter">
                 <label htmlFor="city" className="text-secondary">{t('city')}</label>
                 <select id="city" className="citySelect" onChange={changeCity}>
