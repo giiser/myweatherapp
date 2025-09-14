@@ -8,7 +8,7 @@ const Header = ({headline}) => {
     return (
         <header className="header">
             <h1>
-                {t(headline)}
+                {t(headline.toLowerCase())}
             </h1>
         </header>
     );

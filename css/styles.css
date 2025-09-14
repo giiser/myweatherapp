@@ -14,9 +14,11 @@
 .mb-0 {
   margin-bottom: 0;
 }
-.mt-1,
-.mb-1 {
+.mt-1 {
   margin-top: 0.5rem;
+}
+.mb-1 {
+  margin-bottom: 0.5rem;
 }
 .m-0 {
   margin-top: 0;
@@ -54,6 +56,10 @@ h1 {
   font-size: 22px;
   color: #ffffff;
 }
+h2 {
+  font-size: 18px;
+  text-align: center;
+}
 .header {
   position: sticky;
   display: flex;
@@ -61,6 +67,18 @@ h1 {
   align-items: center;
   border-bottom: 1px solid #ffffff;
   padding-bottom: 1rem;
+}
+.btn-back {
+  margin: auto;
+  text-align: center;
+  border: 1px solid #ffffff;
+  padding: 1rem;
+  width: 100%;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+}
+.btn-back:hover {
+  background-color: #4b4b4b;
 }
 .container {
   display: flex;
@@ -71,6 +89,20 @@ h1 {
   border: 1px solid #ffffff;
   border-radius: 1rem;
   box-sizing: border-box;
+}
+.container .btn-controls {
+  padding: 10px 10px 10px 10px;
+  width: 100%;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  font-size: 16px;
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
+}
+.container .btn-controls:hover {
+  background-color: #4b4b4b;
+  cursor: pointer;
 }
 .summary {
   display: flex;
@@ -201,6 +233,15 @@ h1 {
     width: 100%;
   }
 }
+@media (min-width: 450px) {
+  .forecast-day-grid {
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    width: 100%;
+    margin: auto;
+  }
+}
 @media (prefers-color-scheme: light) {
   * {
     background-color: #ffffff;
@@ -218,6 +259,12 @@ h1 {
   .container {
     border: 1px solid #1e1e1e;
   }
+  .container .btn-controls {
+    background-color: #f0f0f0;
+  }
+  .container .btn-controls:hover {
+    background-color: #c0c0c0;
+  }
   .summary {
     border-bottom: 1px solid #1e1e1e;
   }
@@ -232,6 +279,15 @@ h1 {
     background-color: #f0f0f0;
     border: 1px solid #c0c0c0;
     color: #1e1e1e;
+  }
+  .forecast-day-grid .forecast-grid-item {
+    border: 1px solid #1e1e1e;
+  }
+  .btn-back {
+    background-color: #f0f0f0;
+  }
+  .btn-back:hover {
+    background-color: #c0c0c0;
   }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -17,9 +17,19 @@ const App = () => {
     const [forecast, setForecast] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [query, setQuery] = useState('Tallinn');
-    const [language, setLanguage] = useState('en');
+    const [query, setQuery] = useState(()=>{
+        const query = localStorage.getItem("query");
+        return query || 'Tallinn';
+    });
+    const [language, setLanguage] = useState(()=>{
+        const language = localStorage.getItem("language");
+        return language || 'en';
+    });
     const [days, setDays] = useState([]);
+    const [hidden, setHidden] = useState(()=>{
+        const hidden = localStorage.getItem("hidden");
+        return hidden || false;
+    });
 
     //fetch forecast
     useEffect(() => {
@@ -39,6 +49,9 @@ const App = () => {
         }
         fetchForecast();
         i18n.changeLanguage(language);
+        localStorage.setItem('language', language);
+        localStorage.setItem('query', query);
+        localStorage.setItem('hidden', hidden);
 
     }, [query, language]);
 
@@ -49,6 +62,11 @@ const App = () => {
     const changeLanguage = (e) => {
         setLanguage(e.target.value);
         i18n.changeLanguage(e.target.value);
+        localStorage.setItem('language', language);
+    }
+
+    const hideFilter = () => {
+        setHidden(!hidden);
     }
 
 
@@ -59,7 +77,7 @@ const App = () => {
         <BrowserRouter>
             <ForecastContext.Provider value={forecast}>
                 <Routes>
-                    <Route path="/" element={<HomePage changeCity={changeCity} changeLanguage={changeLanguage} error={error} loading={loading} days={days}/>} />
+                    <Route path="/" element={<HomePage city={query} language={language} changeCity={changeCity} changeLanguage={changeLanguage} error={error} loading={loading} days={days} hidden={hidden} setHidden={hideFilter}/>} />
                     <Route path="/details/:date" element={<DayForecastPage city={query} />}/>
                     <Route path="/about" element={<AboutPage />}/>
 

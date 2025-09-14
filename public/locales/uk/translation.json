@@ -1,5 +1,5 @@
 {
-  "appTitle": "Погода",
+  "apptitle": "Погода",
   "city": "Місто",
   "language": "Мова",
   "currentWeather": "Поточна погода",
@@ -7,12 +7,19 @@
   "windSpeed": "Швидкість вітру",
   "high": "Найвища температура",
   "low": "Найнижча температура",
-  "kmh": "км/год",
+  "kph": "км/год",
   "today": "Сьогодні",
   "tomorrow": "Завтра",
   "tallinn": "Таллінн",
   "lviv": "Львів",
   "chernihiv": "Чернігів",
   "next": "Наступні",
-  "days": "дні"
+  "days": "дні",
+  "rainChance": "Ймовірність дощу",
+  "uvIndex": "УФ індекс",
+  "sunset": "Захід сонця",
+  "sunrise": "Схід сонця",
+  "showControlsButton": "Показати",
+  "hideControlsButton": "Сховати",
+  "back": "← Назад"
 }

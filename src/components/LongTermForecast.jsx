@@ -10,7 +10,7 @@ const LongTermForecast = ({error, loading, days}) => {
     return (
         <div className="container">
             <div className="card-header">
-                <h3 className="text-title mb-1">{t('next')} 3 {t('days')}</h3>
+                <h3 className="text-title mt-1">{t('next')} 3 {t('days')}</h3>
             </div>
 
             {/*trying out to list forecast cards*/}
