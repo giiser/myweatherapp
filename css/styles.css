@@ -6,12 +6,19 @@
   color: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
+* a {
+  text-decoration: none;
+  width: 100%;
+  padding-right: 0.5rem;
+}
 .mb-0 {
   margin-bottom: 0;
 }
-.mt-1,
-.mb-1 {
+.mt-1 {
   margin-top: 0.5rem;
+}
+.mb-1 {
+  margin-bottom: 0.5rem;
 }
 .m-0 {
   margin-top: 0;
@@ -49,6 +56,10 @@ h1 {
   font-size: 22px;
   color: #ffffff;
 }
+h2 {
+  font-size: 18px;
+  text-align: center;
+}
 .header {
   position: sticky;
   display: flex;
@@ -56,6 +67,18 @@ h1 {
   align-items: center;
   border-bottom: 1px solid #ffffff;
   padding-bottom: 1rem;
+}
+.btn-back {
+  margin: auto;
+  text-align: center;
+  border: 1px solid #ffffff;
+  padding: 1rem;
+  width: 100%;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+}
+.btn-back:hover {
+  background-color: #4b4b4b;
 }
 .container {
   display: flex;
@@ -66,6 +89,20 @@ h1 {
   border: 1px solid #ffffff;
   border-radius: 1rem;
   box-sizing: border-box;
+}
+.container .btn-controls {
+  padding: 10px 10px 10px 10px;
+  width: 100%;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  font-size: 16px;
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
+}
+.container .btn-controls:hover {
+  background-color: #4b4b4b;
+  cursor: pointer;
 }
 .summary {
   display: flex;
@@ -94,6 +131,23 @@ h1 {
   flex-direction: column;
   text-align: center;
 }
+.forecast-day-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  box-sizing: border-box;
+}
+.forecast-day-grid .forecast-grid-item {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid #ffffff;
+  border-radius: 1rem;
+}
 .card {
   display: flex;
   justify-content: space-between;
@@ -109,6 +163,7 @@ h1 {
   display: flex;
   align-items: center;
   background-color: inherit;
+  margin: 0.1rem;
 }
 .card .card-left div {
   margin: 0.5rem;
@@ -118,10 +173,14 @@ h1 {
   margin: 0.5rem;
   background-color: inherit;
 }
+.card .card-left div img {
+  background-color: inherit;
+}
 .card .card-right {
   display: flex;
   align-items: center;
   background-color: inherit;
+  margin: 0.1rem;
 }
 .card .card-right p {
   margin: 0.5rem;
@@ -131,19 +190,12 @@ h1 {
   background-color: #4b4b4b;
   cursor: pointer;
 }
-.controls {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 1rem;
-}
 .select-wrapper {
   margin-left: 1rem;
   margin-right: 1rem;
-  width: calc(100% - 2rem);
   box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 0.25rem;
 }
 .select-wrapper select {
   appearance: none;
@@ -170,6 +222,9 @@ h1 {
   margin-bottom: 0.5rem;
   margin-left: 3px;
 }
+.select-wrapper:last-child {
+  margin-bottom: 0.5rem;
+}
 @media (min-width: 768px) {
   .primary-details-grid {
     grid-template-columns: 1fr 1fr;
@@ -177,9 +232,14 @@ h1 {
     align-content: space-evenly;
     width: 100%;
   }
-  .controls {
-    flex-direction: row;
-    gap: 1rem;
+}
+@media (min-width: 450px) {
+  .forecast-day-grid {
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    width: 100%;
+    margin: auto;
   }
 }
 @media (prefers-color-scheme: light) {
@@ -199,6 +259,12 @@ h1 {
   .container {
     border: 1px solid #1e1e1e;
   }
+  .container .btn-controls {
+    background-color: #f0f0f0;
+  }
+  .container .btn-controls:hover {
+    background-color: #c0c0c0;
+  }
   .summary {
     border-bottom: 1px solid #1e1e1e;
   }
@@ -213,6 +279,15 @@ h1 {
     background-color: #f0f0f0;
     border: 1px solid #c0c0c0;
     color: #1e1e1e;
+  }
+  .forecast-day-grid .forecast-grid-item {
+    border: 1px solid #1e1e1e;
+  }
+  .btn-back {
+    background-color: #f0f0f0;
+  }
+  .btn-back:hover {
+    background-color: #c0c0c0;
   }
 }
 /*# sourceMappingURL=styles.css.map */

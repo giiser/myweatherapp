@@ -1,7 +1,6 @@
-import Controls from "./Controls.jsx";
 import {useTranslation} from "react-i18next";
 
-const Header = ({changeCity, changeDays, changeLanguage}) => {
+const Header = ({headline}) => {
 
     const {t} = useTranslation();
 
@@ -9,9 +8,8 @@ const Header = ({changeCity, changeDays, changeLanguage}) => {
     return (
         <header className="header">
             <h1>
-                {t('appTitle')}
+                {t(headline.toLowerCase())}
             </h1>
-            <Controls changeCity={changeCity} changeDays={changeDays} changeLanguage={changeLanguage}/>
         </header>
     );
 }

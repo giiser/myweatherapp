@@ -1,30 +1,24 @@
 import {useTranslation} from "react-i18next";
 
-const Controls = ({changeCity, changeDays, changeLanguage}) => {
+const Controls = ({city, language, changeCity, changeLanguage, hidden, setHidden}) => {
 
     const {t} = useTranslation();
+    const isHidden = hidden?'hidden':'';
 
     return (
-        <div className={"controls"}>
-            <div className="select-wrapper select-filter">
+        <div className={"container"}>
+            <button className={'btn-controls'} onClick={setHidden}>{hidden?t('showControlsButton'):t('hideControlsButton')}</button>
+            <div className={`select-wrapper ${isHidden}`}>
                 <label htmlFor="city" className="text-secondary">{t('city')}</label>
-                <select id="city" className="citySelect" onChange={changeCity}>
+                <select id="city" className="citySelect" value={city} onChange={changeCity}>
                     <option value="Tallinn">{t('tallinn')}</option>
                     <option value="Lviv">{t('lviv')}</option>
                     <option value="Chernihiv">{t('chernihiv')}</option>
                 </select>
             </div>
-            <div className="select-wrapper">
-                <label htmlFor="days" className="text-secondary">{t('forecastDays')}</label>
-                <select id="days"  onChange={changeDays}>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="14">14</option>
-                </select>
-            </div>
-            <div className="select-wrapper">
+            <div className={`select-wrapper ${isHidden}`}>
                 <label htmlFor="lang" className="text-secondary">{t('language')}</label>
-                <select id="lang" onChange={changeLanguage}>
+                <select id="lang" value={language} onChange={changeLanguage}>
                     <option value="en">English</option>
                     <option value="uk">Українська</option>
                 </select>

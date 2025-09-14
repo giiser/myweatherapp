@@ -24,7 +24,7 @@ const SummaryContainer = () => {
                     </div>
                     <div className="detail-grid-item">
                         <label htmlFor="wind-speed" className="text-m text-secondary">{t('windSpeed')}</label>
-                        <div id="wind-speed"  className="text-m">{forecast.current?.wind_kph.toLocaleString()} {t('kmh')}</div>
+                        <div id="wind-speed"  className="text-m">{forecast.current?.wind_kph.toLocaleString()} {t('kph')}</div>
                     </div>
                     <div className="detail-grid-item">
                         <label htmlFor="high-temp" className="text-m text-secondary">{t('high')}</label>
