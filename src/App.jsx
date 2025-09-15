@@ -5,8 +5,8 @@ import i18n from "i18next";
 import {BrowserRouter, Route, Routes} from "react-router";
 import HomePage from "./pages/home.jsx";
 import DayForecastPage from "./pages/dayforecast.jsx";
-import AboutPage from "./pages/about.jsx";
 import NotFoundPage from "./pages/not-found.jsx";
+import {useTranslation} from "react-i18next";
 
 const API_URL= import.meta.env.VITE_BASE_API_URL;
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -31,6 +31,8 @@ const App = () => {
         return hidden || false;
     });
 
+    const {t} = useTranslation();
+
     //fetch forecast
     useEffect(() => {
 
@@ -53,7 +55,7 @@ const App = () => {
         localStorage.setItem('query', query);
         localStorage.setItem('hidden', hidden);
 
-    }, [query, language]);
+    }, [query, language, hidden]);
 
     const changeCity = (e) => {
         setQuery(e.target.value);
@@ -70,8 +72,8 @@ const App = () => {
     }
 
 
-    if (loading) return <p>Loading forecast...</p>;
-    if (error) return <p>Error: {error}</p>;
+    if (loading) return <p>{t('loading')}</p>;
+    if (error) return <p>{t('error')} {error}</p>;
 
     return (
         <BrowserRouter>
@@ -79,7 +81,6 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<HomePage city={query} language={language} changeCity={changeCity} changeLanguage={changeLanguage} error={error} loading={loading} days={days} hidden={hidden} setHidden={hideFilter}/>} />
                     <Route path="/details/:date" element={<DayForecastPage city={query} />}/>
-                    <Route path="/about" element={<AboutPage />}/>
 
                     {/*this is not found. always the last one*/}
                     <Route path="*" element={<NotFoundPage />}/>

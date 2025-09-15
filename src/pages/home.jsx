@@ -2,6 +2,7 @@ import SummaryContainer from "../components/SummaryContainer.jsx";
 import LongTermForecast from "../components/LongTermForecast.jsx";
 import Header from "../components/Header.jsx";
 import Controls from "../components/Controls.jsx";
+import Footer from "../components/Footer.jsx";
 
 const HomePage = ({city, language, changeCity, changeLanguage, error, loading, days, hidden, setHidden}) => {
     return (
@@ -12,6 +13,7 @@ const HomePage = ({city, language, changeCity, changeLanguage, error, loading, d
                 <SummaryContainer />
                 <LongTermForecast error={error} loading={loading} days={days} />
             </main>
+            <Footer />
         </>
 
     )
