@@ -2,6 +2,7 @@ import Header from "../components/Header.jsx";
 import {useLocation, useNavigate} from "react-router";
 import DetailedCard from "../components/DetailedCard.jsx";
 import {useTranslation} from "react-i18next";
+import Footer from "../components/Footer.jsx";
 
 const DayForecastPage = ({city}) => {
 
@@ -90,6 +91,7 @@ const DayForecastPage = ({city}) => {
                     )}
                 </div>
             </div>
+            <Footer />
 
         </>
     )
